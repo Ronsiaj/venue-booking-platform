@@ -1,0 +1,4024 @@
+{
+  "info": {
+    "_postman_id": "b4d17c97-fd3b-4e52-88a7-8c0a2240a2a6",
+    "name": "sm_groups",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47150003",
+    "_collection_link": "https://go.postman.co/collection/47150003-b4d17c97-fd3b-4e52-88a7-8c0a2240a2a6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "admin.php",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"SM Group Admin\",\r\n    \"email\": \"admin@smgroup.com\",\r\n    \"phone\": \"9876543210\",\r\n    \"password\": \"Admin@12345\",\r\n    \"confirm_password\": \"Admin@12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/auth/admin.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "auth",
+                "admin.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh_token.php",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh_token\": \"{{json_web_token_0uqr}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/auth/refresh_token.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "auth",
+                "refresh_token.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login.php",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@smgroup.com\",\r\n    \"password\": \"Admin@12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/auth/login.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "auth",
+                "login.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "customer_register.php",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Sriram\",\r\n    \"email\": \"sriramneelamegam04@gmail.com\",\r\n    \"phone\": \"9876543211\",\r\n    \"password\": \"Sriram@123\",\r\n    \"confirm_password\": \"Sriram@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/auth/customer_register.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "auth",
+                "customer_register.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "staff_register.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_01gl}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Staff Kumar\",\r\n    \"email\": \"staff@smgroup.com\",\r\n    \"phone\": \"9876543212\",\r\n    \"password\": \"Staff@123\",\r\n    \"confirm_password\": \"Staff@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/auth/staff_register.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "auth",
+                "staff_register.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profile.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_04vx}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/auth/profile.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "auth",
+                "profile.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_04vx}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/auth/logout.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "auth",
+                "logout.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "room_type",
+      "item": [
+        {
+          "name": "create.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_01gl}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Deluxe Room\",\r\n    \"description\": \"Comfortable deluxe room with modern facilities.\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room_type/create.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room_type",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_13rk}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"room_type_id\": 1,\r\n    \"name\": \"Premium Suite\",\r\n    \"description\": \"Spacious premium suite with modern facilities and comfortable accommodation.\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room_type/update.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room_type",
+                "update.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_13rk}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"room_type_id\": 3\r\n    \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room_type/delete.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room_type",
+                "delete.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list.php",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_13rk}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"room_type_id\": 3\r\n    \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room_type/list.php?search=premium&status=active&page=1&limit=10&sort_by=name&sort_order=ASC",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room_type",
+                "list.php"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "premium"
+                },
+                {
+                  "key": "status",
+                  "value": "active"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "name"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "ASC"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_13rk}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/room_type/view.php?room_type_id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room_type",
+                "view.php"
+              ],
+              "query": [
+                {
+                  "key": "room_type_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "room",
+      "item": [
+        {
+          "name": "create.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1833}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"room_type_id\": 1,\r\n    \"room_number\": \"101\",\r\n    \"name\": \"Premium Room\",\r\n    \"description\": \"Spacious premium room with modern facilities.\",\r\n    \"bed_count\": 2,\r\n    \"guest_capacity\": 4,\r\n    \"price_per_night\": 2360,\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room/create.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"room_id\": 3,\r\n   \r\n    \"price_per_night\": 3500,\r\n    \"status\": \"available\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room/update.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "update.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1833}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"room_id\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room/delete.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "delete.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1833}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/room/list.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "list.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/room/view.php?room_id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "view.php"
+              ],
+              "query": [
+                {
+                  "key": "room_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "availablity.php",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/room/availablity.php?check_in_date=2026-09-25&check_out_date=2026-09-27&guests=2&min_price=1500&max_price=5000&page=1&limit=10&sort_by=price&sort_order=ASC",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "availablity.php"
+              ],
+              "query": [
+                {
+                  "key": "check_in_date",
+                  "value": "2026-09-25"
+                },
+                {
+                  "key": "check_out_date",
+                  "value": "2026-09-27"
+                },
+                {
+                  "key": "guests",
+                  "value": "2"
+                },
+                {
+                  "key": "min_price",
+                  "value": "1500"
+                },
+                {
+                  "key": "max_price",
+                  "value": "5000"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "price"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "ASC"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "upload_img.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "room_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": [
+                    "/C:/Users/dheer/Downloads/697266247.jpg"
+                  ]
+                },
+                {
+                  "key": "alt_text",
+                  "value": "Premium Room Interior",
+                  "type": "text"
+                },
+                {
+                  "key": "is_primary",
+                  "value": "0",
+                  "type": "text"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "5",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room/upload_img.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "upload_img.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete_img.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"image_id\": 5,\r\n    \"room_id\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room/delete_img.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "delete_img.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "aminity_list.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/room/aminity_list.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "aminity_list.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update_aminity.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"room_id\": 1,\r\n    \"amenity_ids\": [1, 2, 3, 4, 5, 6, 7, 8, 9]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/room/update_aminity.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "room",
+                "update_aminity.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "aminity",
+      "item": [
+        {
+          "name": "create.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Mini fridge\",\r\n    \"icon\": \"fridge\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/aminity/create.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "aminity",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"amenity_id\": 10,\r\n    \"name\": \"Mini Fridge\",\r\n    \"icon\": \"small fridge\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/aminity/update.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "aminity",
+                "update.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qux}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"amenity_id\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/aminity/delete.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "aminity",
+                "delete.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "food",
+      "item": [
+        {
+          "name": "categories",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0b3h}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"special Breakfast\",\r\n    \"description\": \"Breakfast items\",\r\n    \"status\": \"active\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/categories/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "categories",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0b3h}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"category_id\": 10,\r\n    \"name\": \"spl 1 Breakfast\",\r\n    \"description\": \"All breakfast items\",\r\n    \"status\": \"active\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/categories/update.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "categories",
+                    "update.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0b3h}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"category_id\": 10\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/categories/delete.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "categories",
+                    "delete.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/categories/list.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "categories",
+                    "list.php"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "item",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0b3h}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "food_category_id",
+                      "value": "2",
+                      "type": "text"
+                    },
+                    {
+                      "key": "name",
+                      "value": "Chicken Biriyani",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "Delicious chicken biriyani with raita",
+                      "type": "text"
+                    },
+                    {
+                      "key": "food_type",
+                      "value": "non_veg",
+                      "type": "text"
+                    },
+                    {
+                      "key": "status",
+                      "value": "active",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": [
+                        "/C:/Users/dheer/Downloads/Chicken-Biryani-Recipe.jpg"
+                      ]
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/item/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "item",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0b3h}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "food_item_id",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "name",
+                      "value": "Chicken Biriyani Special",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/item/update.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "item",
+                    "update.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0b3h}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"food_item_id\": 3\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/item/delete.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "item",
+                    "delete.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/item/list.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "item",
+                    "list.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "view.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/item/view.php?food_item_id=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "item",
+                    "view.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "food_item_id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "room_package",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0b3h}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Lunch Combo\",\r\n    \"description\": \"Complete Lunch package for room guests.\",\r\n    \"meal_type\": \"Lunch\",\r\n    \"status\": \"active\",\r\n    \"items\": [\r\n        {\r\n            \"food_item_id\": 1,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"food_item_id\": 2,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/room_package/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "room_package",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_00d9}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"package_id\": 1,\r\n    \"items\": [\r\n        {\r\n            \"food_item_id\": 1,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"food_item_id\": 2,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/room_package/update.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "room_package",
+                    "update.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_00d9}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"package_id\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/room_package/delete.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "room_package",
+                    "delete.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/room_package/list.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "room_package",
+                    "list.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "view.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/room_package/view.php?package_id=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "room_package",
+                    "view.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update_item.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_00d9}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"package_id\": 1,\r\n    \"food_item_id\": 1,\r\n    \"quantity\": 3\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/food/room_package/update_item.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "food",
+                    "room_package",
+                    "update_item.php"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "booking",
+      "item": [
+        {
+          "name": "create.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0ggh}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"check_in_date\": \"2026-09-25\",\r\n    \"check_out_date\": \"2026-09-27\",\r\n    \"total_guests\": 2,\r\n    \"special_request\": \"Late check-in\",\r\n\r\n    \"rooms\": [\r\n        {\r\n            \"room_id\": 1\r\n        }\r\n    ],\r\n\r\n    \"food_packages\": [\r\n        {\r\n            \"package_id\": 1,\r\n            \"quantity\": 2,\r\n            \"notes\": \"Breakfast\"\r\n        }\r\n    ],\r\n\r\n    \"food_items\": [\r\n        {\r\n            \"food_item_id\": 2,\r\n            \"quantity\": 2,\r\n            \"notes\": \"Less spicy\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/booking/create.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "booking",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0ggh}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/booking/view.php?booking_id=2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "booking",
+                "view.php"
+              ],
+              "query": [
+                {
+                  "key": "booking_id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "cancel.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0ggh}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"booking_id\": 2,\r\n    \"reason\": \"Personal reason\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/booking/cancel.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "booking",
+                "cancel.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "check_in.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0kqn}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"booking_id\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/booking/check_in.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "booking",
+                "check_in.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "check_out.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0kqn}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"booking_id\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/booking/check_out.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "booking",
+                "check_out.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "history.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0kqn}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/booking/history.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "booking",
+                "history.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "payment",
+      "item": [
+        {
+          "name": "create_order.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0ggh}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"booking_id\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/payment/create_order.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "payment",
+                "create_order.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0ggh}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"booking_id\": 12,\r\n    \"razorpay_order_id\": \"order_R8xxxxxx\",\r\n    \"razorpay_payment_id\": \"pay_R8xxxxxx\",\r\n    \"razorpay_signature\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/payment/verify.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "payment",
+                "verify.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "webhook.php",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "status.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "history.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qwp}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/payment/history.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "payment",
+                "history.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "hall_type",
+      "item": [
+        {
+          "name": "create.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Marriage Hall 2\",\r\n    \"description\": \"Spacious hall suitable for marriage and wedding functions.\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_type/create.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_type",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"hall_type_id\": 3,\r\n    \"name\": \"Premium Marriage Hall\",\r\n    \"description\": \"Premium hall suitable for marriage and large wedding functions.\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_type/update.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_type",
+                "update.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"hall_type_id\": 3 \r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_type/delete.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_type",
+                "delete.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_type/list.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_type",
+                "list.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "hall",
+      "item": [
+        {
+          "name": "lead",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"customer_name\": \"Arun Kumar\",\r\n    \"customer_phone\": \"9876543215\",\r\n    \"customer_email\": \"arun@gmail.com\",\r\n\r\n    \"hall_id\": 1,\r\n\r\n    \"event_type\": \"Wedding\",\r\n    \"event_date\": \"2026-10-25\",\r\n    \"event_time\": \"10:00 AM\",\r\n\r\n    \"guest_count\": 400,\r\n\r\n    \"food_required\": 1,\r\n    \"decoration_required\": 1,\r\n\r\n    \"other_requirements\": \"Need vegetarian food and stage decoration.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/hall/lead/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "hall",
+                    "lead",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "view.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "create.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"hall_type_id\": 1,\r\n    \"name\": \"Grand Marriage Hall\",\r\n    \"description\": \"Spacious marriage hall suitable for weddings and large functions.\",\r\n    \"capacity\": 500,\r\n    \"area\": \"5000 sq.ft\",\r\n    \"price_description\": \"Contact us for package and pricing details.\",\r\n    \"status\": \"available\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/create.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"hall_id\": 2,\r\n    \"hall_type_id\": 2,\r\n    \"name\": \"SM Grand Party Hall\",\r\n    \"description\": \"Large party hall suitable for family functions.\",\r\n    \"capacity\": 750,\r\n    \"area\": \"6500 sq.ft\",\r\n    \"price_description\": \"Contact management for package details.\",\r\n    \"status\": \"available\"\r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/update.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "update.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"hall_id\": 3 }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/delete.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "delete.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/list.php?search=hall&hall_type_id=1&status=available&min_capacity=300&page=1&limit=10&sort_by=capacity&sort_order=DESC",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "list.php"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "hall"
+                },
+                {
+                  "key": "hall_type_id",
+                  "value": "1"
+                },
+                {
+                  "key": "status",
+                  "value": "available"
+                },
+                {
+                  "key": "min_capacity",
+                  "value": "300"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "capacity"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "DESC"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/view.php?hall_id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "view.php"
+              ],
+              "query": [
+                {
+                  "key": "hall_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "upload_img.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "hall_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": [
+                    "/C:/Users/dheer/Downloads/shahnaz-garden-marriage-hall-rampur-banquet-halls-kdiuhjsrtu.webp"
+                  ]
+                },
+                {
+                  "key": "alt_text",
+                  "value": "Grand Marriage Hall",
+                  "type": "text"
+                },
+                {
+                  "key": "is_primary",
+                  "value": "0",
+                  "type": "text"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "4",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/upload_img.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "upload_img.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete_img.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"hall_id\": 1,\r\n    \"image_id\": 4\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/delete_img.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "delete_img.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update_facilities.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_07dw}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"hall_id\": 1,\r\n    \"facility_ids\": [1, 2, 4, 6]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall/update_facilities.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall",
+                "update_facilities.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "hall_facilities",
+      "item": [
+        {
+          "name": "create.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_121b}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Wall Air Conditioning\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_facilities/create.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_facilities",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_121b}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"facility_id\": 10,\r\n    \"name\": \"Premium Air Conditioning\",\r\n    \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_facilities/update.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_facilities",
+                "update.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_121b}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"facility_id\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_facilities/delete.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_facilities",
+                "delete.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_121b}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/hall_facilities/list.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "hall_facilities",
+                "list.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "dining",
+      "item": [
+        {
+          "name": "package",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0t4x}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "South Indian Lunch",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "Traditional South Indian lunch package",
+                      "type": "text"
+                    },
+                    {
+                      "key": "meal_type",
+                      "value": "lunch",
+                      "type": "text"
+                    },
+                    {
+                      "key": "status",
+                      "value": "active",
+                      "type": "text"
+                    },
+                    {
+                      "key": "items",
+                      "value": "[\n    {\n        \"food_item_id\": 1,\n        \"quantity\": 2\n    },\n    {\n        \"food_item_id\": 2,\n        \"quantity\": 3\n    }\n]",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": [
+                        "/C:/Users/dheer/Downloads/Chicken-Biryani-Recipe.jpg"
+                      ]
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/package/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "package",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0t4x}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "package_id",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "items",
+                      "value": "[\n    {\n        \"food_item_id\": 1,\n        \"quantity\": 5\n    },\n    {\n        \"food_item_id\": 2,\n        \"quantity\": 4\n    }\n]",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/package/update.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "package",
+                    "update.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0t4x}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"package_id\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/package/delete.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "package",
+                    "delete.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/package/list.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "package",
+                    "list.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "view.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/package/view.php?package_id=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "package",
+                    "view.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "lead",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"customer_name\": \"Sriram\",\r\n    \"customer_phone\": \"9876543211\",\r\n    \"customer_email\": \"sriram@example.com\",\r\n\r\n    \"dining_package_id\": 1,\r\n\r\n    \"meal_type\": \"lunch\",\r\n\r\n    \"dining_date\": \"2026-10-05\",\r\n\r\n    \"dining_time\": \"1:00 PM\",\r\n\r\n    \"guest_count\": 50,\r\n\r\n    \"other_requirements\": \"Need less spicy food\",\r\n\r\n    \"items\": [\r\n        {\r\n            \"food_item_id\": 1,\r\n            \"quantity\": 5,\r\n            \"notes\": \"Less spicy\"\r\n        },\r\n        {\r\n            \"food_item_id\": 2,\r\n            \"quantity\": 3,\r\n            \"notes\": \"Extra quantity\"\r\n        }\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/lead/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "lead",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "view.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0t4x}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/lead/view.php?lead_id=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "lead",
+                    "view.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lead_id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0t4x}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/dining/lead/list.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "dining",
+                    "lead",
+                    "list.php"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catering",
+      "item": [
+        {
+          "name": "package",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0uhb}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Wedding Catering Premium",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "Premium vegetarian catering package",
+                      "type": "text"
+                    },
+                    {
+                      "key": "rate",
+                      "value": "850",
+                      "type": "text"
+                    },
+                    {
+                      "key": "rate_unit",
+                      "value": "per_person",
+                      "type": "text"
+                    },
+                    {
+                      "key": "gst_rate",
+                      "value": "18",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price_includes_gst",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "minimum_quantity",
+                      "value": "50",
+                      "type": "text"
+                    },
+                    {
+                      "key": "status",
+                      "value": "active",
+                      "type": "text"
+                    },
+                    {
+                      "key": "items",
+                      "value": "[\n    {\n        \"food_item_id\": 1,\n        \"quantity\": 1\n    },\n    {\n        \"food_item_id\": 2,\n        \"quantity\": 1\n    }\n]",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": [
+                        "/C:/Users/dheer/Downloads/Chicken-Biryani-Recipe.jpg"
+                      ]
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/package/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "package",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0uhb}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "package_id",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "rate",
+                      "value": "450",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/package/update.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "package",
+                    "update.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0uhb}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"package_id\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/package/delete.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "package",
+                    "delete.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/package/list.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "package",
+                    "list.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "view.php",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/package/view.php?package_id=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "package",
+                    "view.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "leads",
+          "item": [
+            {
+              "name": "create.php",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"customer_name\": \"Sriram Kumar\",\r\n    \"customer_phone\": \"9876543210\",\r\n    \"customer_email\": \"sriram@gmail.com\",\r\n    \"catering_package_id\": 1,\r\n    \"event_type\": \"Wedding\",\r\n    \"event_date\": \"2026-10-15\",\r\n    \"event_time\": \"12:00 PM\",\r\n    \"guest_count\": 150,\r\n    \"venue_address\": \"Karaikudi\",\r\n    \"other_requirements\": \"Pure vegetarian catering required\",\r\n    \"items\": [\r\n        {\r\n            \"food_item_id\": 1,\r\n            \"quantity\": 2,\r\n            \"notes\": \"Less spicy\"\r\n        },\r\n        {\r\n            \"food_item_id\": 2,\r\n            \"quantity\": 1,\r\n            \"notes\": \"Required for all guests\"\r\n        }\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/lead/create.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "lead",
+                    "create.php"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "view.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0uhb}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/lead/view.php?lead_id=2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "lead",
+                    "view.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lead_id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "list.php",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0uhb}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost/sm_groups/catering/lead/list.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "sm_groups",
+                    "catering",
+                    "lead",
+                    "list.php"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lead",
+      "item": [
+        {
+          "name": "list.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0qbf}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/lead/list.php?domain=catering&status=new&search=wedding&from_date=2026-10-01&to_date=2026-12-31&min_amount=10000&max_amount=100000&assigned_admin_id=1&page=1&limit=20&sort_by=created_at&sort_order=DESC",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "lead",
+                "list.php"
+              ],
+              "query": [
+                {
+                  "key": "domain",
+                  "value": "catering"
+                },
+                {
+                  "key": "status",
+                  "value": "new"
+                },
+                {
+                  "key": "search",
+                  "value": "wedding"
+                },
+                {
+                  "key": "from_date",
+                  "value": "2026-10-01"
+                },
+                {
+                  "key": "to_date",
+                  "value": "2026-12-31"
+                },
+                {
+                  "key": "min_amount",
+                  "value": "10000"
+                },
+                {
+                  "key": "max_amount",
+                  "value": "100000"
+                },
+                {
+                  "key": "assigned_admin_id",
+                  "value": "1"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "created_at"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "DESC"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1bj6}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/lead/view.php?lead_id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "lead",
+                "view.php"
+              ],
+              "query": [
+                {
+                  "key": "lead_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update_status.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1bj6}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"lead_id\": 1,\r\n    \"status\": \"contacted\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/lead/update_status.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "lead",
+                "update_status.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assign.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "convert.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1bj6}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"lead_id\": 1,\r\n    \"converted_amount\": 35000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/lead/convert.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "lead",
+                "convert.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "notification",
+      "item": [
+        {
+          "name": "whastapp.php",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"lead_id\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/notification/whatsapp.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "notification",
+                "whatsapp.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "email.php",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"lead_id\": 1,\r\n    \"notification_type\": \"all\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/sm_groups/notification/email.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "notification",
+                "email.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "history.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "overview.php",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "revenue.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/dashboard/revenue.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "dashboard",
+                "revenue.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "booking.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/dashboard/booking.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "dashboard",
+                "booking.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "lead.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/dashboard/lead.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "dashboard",
+                "lead.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "reports",
+      "item": [
+        {
+          "name": "room_reports.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/reports/room_reports.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "reports",
+                "room_reports.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "revenue_report.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/reports/revenue_report.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "reports",
+                "revenue_report.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hall_report.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/reports/hall_report.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "reports",
+                "hall_report.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "dining_report.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/reports/dining_report.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "reports",
+                "dining_report.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "catering_report.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/reports/dining_report.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "reports",
+                "dining_report.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "lead_report.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/reports/dining_report.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "reports",
+                "dining_report.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "payment_report.php",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_05bc}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/sm_groups/reports/dining_report.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "sm_groups",
+                "reports",
+                "dining_report.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0uqr",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_01gl",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_04vx",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_13rk",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1833",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0qux",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0b3h",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_00d9",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0ggh",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0kqn",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0qwp",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_07dw",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_121b",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0t4x",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0uhb",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0qbf",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1bj6",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1cxs",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_02sj",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_05bc",
+      "secret": true
+    }
+  ]
+}
