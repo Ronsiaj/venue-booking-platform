@@ -11594,7 +11594,7 @@ input[type="datetime-local"] {
 }
 
 .hall-details__name {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.2vw, 2.4rem);
   font-weight: 800;
   color: var(--text-primary);
@@ -11610,7 +11610,7 @@ input[type="datetime-local"] {
 }
 
 .hall-details__price {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--gold-600);

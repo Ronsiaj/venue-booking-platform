@@ -673,7 +673,7 @@ const RoomDetailsPage = ({ roomId, onNavigate }) => {
         {!loading && error && (
           <div className="hall-details__error-state">
             <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '12px' }}>⚠️</span>
-            <h2 style={{ color: '#dc2626', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>Unable to Load Room</h2>
+            <h2 style={{ color: '#dc2626', marginBottom: '8px', fontFamily: 'var(--font-sans)' }}>Unable to Load Room</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '24px' }}>{error}</p>
             <button type="button" className="lodge-btn-book" style={{ padding: '12px 28px' }} onClick={() => onNavigate('/lodge')}>
               Return to Lodge Catalog
@@ -706,7 +706,7 @@ const RoomDetailsPage = ({ roomId, onNavigate }) => {
                       <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9" />
                     </svg>
                   </div>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px' }}>{room.name || `Room #${room.room_number}`}</h3>
+                  <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px' }}>{room.name || `Room #${room.room_number}`}</h3>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', margin: 0 }}>SM Lodge Accommodation</p>
                   {room.room_type?.name && (
                     <span className="hall-details__showcase-badge" style={{ position: 'absolute', top: '16px', left: '16px' }}>

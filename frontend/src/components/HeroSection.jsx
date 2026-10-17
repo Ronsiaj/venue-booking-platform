@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import heroBg from '../assets/images/hero-bg.jpg';
 
-const HeroSection = () => {
+const HeroSection = ({ onNavigate }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const heroRef = useRef(null);
@@ -135,8 +135,12 @@ const HeroSection = () => {
               id="hero-book-now"
               className="hero-section__cta hero-section__cta--primary"
               type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onNavigate) onNavigate('/lodge');
+              }}
             >
-              <span className="hero-section__cta-text">Book Your Event</span>
+              <span className="hero-section__cta-text">Book Now</span>
               <svg
                 className="hero-section__cta-arrow"
                 width="20"
@@ -156,6 +160,10 @@ const HeroSection = () => {
               id="hero-explore-venues"
               className="hero-section__cta hero-section__cta--secondary"
               type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onNavigate) onNavigate('/halls');
+              }}
             >
               <svg
                 className="hero-section__cta-icon"

@@ -56,7 +56,7 @@ const Header = ({ onNavigate, currentPage = '/' }) => {
     { id: 'nav-home', label: 'Home', href: '/' },
     { id: 'nav-hall', label: 'Hall', href: '/halls' },
     { id: 'nav-catering', label: 'Catering', href: '/catering' },
-    { id: 'nav-restaurant', label: 'Restaurant & Dining', href: '/restaurant' },
+    { id: 'nav-restaurant', label: 'Dining', href: '/restaurant' },
     { id: 'nav-lodge', label: 'Lodge', href: '/lodge' },
     { id: 'nav-about', label: 'About', href: '/about' },
     { id: 'nav-contact', label: 'Contact', href: '/contact' },
